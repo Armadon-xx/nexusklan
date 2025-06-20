@@ -1,0 +1,1430 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Nexus Klan - CS2 Jailbreak'in lider topluluğu | Profesyonel oyun deneyimi">
+  <meta name="keywords" content="cs2, jailbreak, nexus, nexusklan, cs2 sunucu, cs2 türk">
+  <meta name="author" content="Nexus Klan">
+  <meta property="og:title" content="Nexus Klan Jailbreak">
+  <meta property="og:description" content="CS2 Jailbreak'in en iyi Türk topluluğu">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://nexusklan.com">
+  <meta property="og:image" content="https://nexusklan.com/images/og-image.jpg">
+  <title>Nexus Klan Jailbreak</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Oxanium:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="icon" href="https://example.com/favicon.ico" type="image/x-icon">
+  <style>
+    :root {
+      --primary: #2ECC71;
+      --primary-dark: #27AE60;
+      --primary-light: rgba(46, 204, 113, 0.1);
+      --secondary: #3498DB;
+      --secondary-dark: #2980B9;
+      --dark: #111827;
+      --darker: #0d1321;
+      --light: #f8f9fa;
+      --lighter: rgba(255, 255, 255, 0.9);
+      --gray: #6c757d;
+      --bg-dark: #1a1a2e;
+      --bg-darker: #16213e;
+      --bg-gradient: linear-gradient(135deg, var(--bg-dark) 0%, var(--bg-darker) 100%);
+      --text-accent: #2ECC71;
+      --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --transition-slow: all 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+      --nav-height: 80px;
+      --border-radius: 12px;
+      --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      --box-shadow-hover: 0 15px 45px rgba(0, 0, 0, 0.4);
+      --text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    }
+
+    * { 
+      margin: 0; 
+      padding: 0; 
+      box-sizing: border-box; 
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Poppins', 'Segoe UI', sans-serif;
+      background: var(--bg-gradient);
+      color: var(--light);
+      line-height: 1.7;
+      padding-top: var(--nav-height);
+      min-height: 100vh;
+      background-attachment: fixed;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: 
+        radial-gradient(circle at 10% 20%, rgba(46, 204, 113, 0.08) 0%, transparent 30%),
+        radial-gradient(circle at 90% 80%, rgba(52, 152, 219, 0.08) 0%, transparent 30%);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+      100% { transform: scale(1); }
+    }
+
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    @keyframes glitch {
+      0% { text-shadow: 2px 0 var(--primary); }
+      25% { text-shadow: -2px 0 var(--secondary); }
+      50% { text-shadow: 2px 0 var(--primary-dark); }
+      75% { text-shadow: -2px 0 var(--secondary-dark); }
+      100% { text-shadow: 2px 0 var(--primary); }
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-family: 'Oxanium', 'Poppins', sans-serif;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      background: linear-gradient(to right, var(--light), var(--primary));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: var(--text-shadow);
+    }
+
+    h2 {
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+      color: var(--light);
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 4px;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+
+    h3 {
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      color: var(--light);
+    }
+
+    p {
+      font-size: 1.1em;
+      line-height: 1.8;
+      margin-bottom: 25px;
+      color: var(--lighter);
+    }
+
+    /* Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(26, 26, 46, 0.98);
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+      backdrop-filter: blur(12px);
+      display: flex;
+      justify-content: center;
+      border-bottom: 1px solid rgba(46, 204, 113, 0.2);
+      transition: var(--transition);
+    }
+
+    nav.scrolled {
+      padding: 10px 0;
+      box-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+      background: rgba(17, 24, 39, 0.98);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+      max-width: 1400px;
+      padding: 0 30px;
+    }
+
+    .nav-logo {
+      color: var(--light);
+      font-weight: 700;
+      font-size: 1.6em;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      margin-right: auto;
+      transition: var(--transition);
+      font-family: 'Oxanium', sans-serif;
+      letter-spacing: 1px;
+    }
+
+    .nav-logo span {
+      color: var(--primary);
+      margin-left: 5px;
+      transition: var(--transition);
+    }
+
+    .nav-logo:hover {
+      transform: scale(1.05);
+    }
+
+    .nav-logo:hover span {
+      animation: glitch 0.5s linear;
+    }
+
+    .nav-links {
+      display: flex;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    nav a {
+      color: var(--light);
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1.05em;
+      cursor: pointer;
+      transition: var(--transition);
+      padding: 8px 16px;
+      border-radius: var(--border-radius);
+      display: flex;
+      align-items: center;
+      position: relative;
+      letter-spacing: 0.5px;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    nav a.active {
+      color: var(--primary);
+      background: var(--primary-light);
+    }
+
+    nav a.active::after {
+      width: 70%;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+      transform: translateX(-50%);
+    }
+
+    nav a:hover::after {
+      width: 70%;
+    }
+
+    nav a i {
+      margin-right: 8px;
+      font-size: 0.95em;
+    }
+
+    .mobile-menu-btn {
+      display: none;
+      background: none;
+      border: none;
+      color: var(--light);
+      font-size: 1.5em;
+      cursor: pointer;
+      margin-left: auto;
+      transition: var(--transition);
+    }
+
+    .mobile-menu-btn:hover {
+      color: var(--primary);
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 0 40px;
+      position: relative;
+    }
+
+    /* Sections */
+    section {
+      display: none;
+      animation: fadeIn 0.6s ease-out forwards;
+      min-height: calc(100vh - 180px);
+      padding: 80px 0;
+      opacity: 0;
+      position: relative;
+    }
+
+    section.active {
+      display: block;
+      opacity: 1;
+    }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 60px;
+      position: relative;
+    }
+
+    .section-header .logo {
+      font-size: 5em;
+      margin-bottom: 20px;
+      color: var(--primary);
+      text-shadow: 0 0 25px rgba(46, 204, 113, 0.4);
+      animation: pulse 3s infinite;
+      display: inline-block;
+    }
+
+    .section-header p {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Buttons */
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 16px 40px;
+      margin: 25px 10px;
+      background-color: var(--primary);
+      border: none;
+      border-radius: 50px;
+      color: white;
+      font-size: 1.1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--box-shadow);
+      text-decoration: none;
+      position: relative;
+      overflow: hidden;
+      letter-spacing: 0.5px;
+    }
+
+    .button::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2), transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+
+    .button:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-5px);
+      box-shadow: var(--box-shadow-hover);
+    }
+
+    .button:hover::after {
+      transform: translateX(100%);
+    }
+
+    .button i {
+      margin-right: 12px;
+    }
+
+    .button.secondary {
+      background-color: var(--secondary);
+      box-shadow: 0 5px 20px rgba(52, 152, 219, 0.3);
+    }
+
+    .button.secondary:hover {
+      background-color: var(--secondary-dark);
+      box-shadow: var(--box-shadow-hover);
+    }
+
+    /* Cards */
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .card {
+      background: rgba(30, 30, 47, 0.7);
+      border-radius: var(--border-radius);
+      padding: 40px 30px;
+      width: 320px;
+      transition: var(--transition);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--box-shadow);
+      backdrop-filter: blur(8px);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--primary);
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+      box-shadow: var(--box-shadow-hover);
+      border-color: rgba(46, 204, 113, 0.3);
+    }
+
+    .card-icon {
+      font-size: 3em;
+      color: var(--primary);
+      margin-bottom: 20px;
+      transition: var(--transition);
+    }
+
+    .card:hover .card-icon {
+      transform: scale(1.1);
+      animation: pulse 1.5s infinite;
+    }
+
+    .card h3 {
+      color: var(--light);
+      margin-bottom: 20px;
+      font-size: 1.6em;
+      font-weight: 600;
+      position: relative;
+      padding-bottom: 10px;
+    }
+
+    .card h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 2px;
+      background: var(--primary);
+      transition: var(--transition);
+    }
+
+    .card:hover h3::after {
+      width: 80px;
+    }
+
+    .card p {
+      font-size: 1em;
+      margin-bottom: 0;
+    }
+
+    /* Server Info */
+    .server-info {
+      background: rgba(30, 30, 47, 0.7);
+      border-radius: var(--border-radius);
+      padding: 50px;
+      max-width: 800px;
+      margin: 50px auto;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      box-shadow: var(--box-shadow);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .server-info::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') center/cover;
+      opacity: 0.1;
+      z-index: -1;
+    }
+
+    .info-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 25px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .info-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .info-icon {
+      font-size: 1.8em;
+      color: var(--primary);
+      margin-right: 25px;
+      min-width: 40px;
+      text-align: center;
+    }
+
+    .info-content {
+      flex: 1;
+    }
+
+    .info-content strong {
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Features Grid */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 50px;
+    }
+
+    .feature-item {
+      background: rgba(30, 30, 47, 0.5);
+      padding: 30px;
+      border-radius: var(--border-radius);
+      border-left: 4px solid var(--primary);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-item:hover {
+      background: rgba(30, 30, 47, 0.8);
+      transform: translateY(-5px);
+      box-shadow: var(--box-shadow);
+    }
+
+    .feature-item h3 {
+      color: var(--primary);
+      margin-bottom: 15px;
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+    }
+
+    .feature-item h3 i {
+      margin-right: 15px;
+      font-size: 1.2em;
+    }
+
+    /* Rules Section */
+    .rules-container {
+      max-width: 900px;
+      margin: 0 auto;
+      background: rgba(30, 30, 47, 0.7);
+      border-radius: var(--border-radius);
+      padding: 40px;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      box-shadow: var(--box-shadow);
+    }
+
+    .rules-category {
+      margin-bottom: 40px;
+    }
+
+    .rules-category h3 {
+      color: var(--primary);
+      font-size: 1.8em;
+      margin-bottom: 20px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    .rules-list {
+      list-style-type: none;
+    }
+
+    .rules-list li {
+      position: relative;
+      padding-left: 25px;
+      margin-bottom: 12px;
+      font-size: 1.05em;
+      line-height: 1.6;
+    }
+
+    .rules-list li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--primary);
+      font-weight: bold;
+      font-size: 1.2em;
+    }
+
+    .rules-note {
+      font-style: italic;
+      margin-top: 20px;
+      padding: 15px;
+      background: rgba(46, 204, 113, 0.1);
+      border-left: 4px solid var(--primary);
+      border-radius: 0 var(--border-radius) var(--border-radius) 0;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 40px 0;
+      font-size: 0.95em;
+      color: var(--gray);
+      background: rgba(17, 24, 39, 0.95);
+      margin-top: 80px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      position: relative;
+    }
+
+    .footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(to right, transparent, var(--primary), transparent);
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--gray);
+      text-decoration: none;
+      transition: var(--transition);
+      font-weight: 500;
+    }
+
+    .footer-links a:hover {
+      color: var(--primary);
+    }
+
+    .social-links {
+      display: flex;
+      justify-content: center;
+      gap: 25px;
+      margin-top: 25px;
+    }
+
+    .social-links a {
+      color: var(--light);
+      font-size: 1.5em;
+      transition: var(--transition);
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: rgba(255, 255, 255, 0.05);
+    }
+
+    .social-links a:hover {
+      color: var(--primary);
+      transform: translateY(-5px);
+      background: rgba(46, 204, 113, 0.1);
+    }
+
+    /* Special Elements */
+    .ip-address {
+      display: inline-block;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-family: monospace;
+      font-size: 1.2em;
+      color: var(--primary);
+      margin: 15px 0;
+      border: 1px solid rgba(46, 204, 113, 0.3);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .highlight-text {
+      font-size: 1.3em;
+      font-weight: 600;
+      color: var(--primary);
+      margin: 20px 0;
+      text-shadow: 0 0 10px rgba(46, 204, 113, 0.3);
+    }
+
+    /* Loading animation */
+    .loader-wrapper {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-dark);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      transition: opacity 0.5s ease;
+    }
+
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 5px solid var(--primary);
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    .loader-text {
+      color: var(--light);
+      font-size: 1.2em;
+      font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes rotation {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Scroll to top button */
+    .scroll-top {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      background: var(--primary);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+      z-index: 999;
+      box-shadow: var(--box-shadow);
+      font-size: 1.3em;
+    }
+
+    .scroll-top.active {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .scroll-top:hover {
+      background: var(--primary-dark);
+      transform: translateY(-5px) scale(1.1);
+    }
+
+    /* Particles */
+    .particles {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    /* Responsive styles */
+    @media (max-width: 1200px) {
+      .container {
+        padding: 0 30px;
+      }
+      
+      h1 {
+        font-size: 3em;
+      }
+      
+      h2 {
+        font-size: 2.2em;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .nav-links {
+        position: static;
+        transform: none;
+        margin-left: auto;
+      }
+      
+      .server-info, .rules-container {
+        padding: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-container {
+        flex-direction: row;
+      }
+      
+      .nav-links {
+        position: fixed;
+        top: var(--nav-height);
+        left: -100%;
+        width: 80%;
+        height: calc(100vh - var(--nav-height));
+        background: var(--bg-darker);
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 40px;
+        transition: var(--transition);
+        z-index: 999;
+        box-shadow: 5px 0 15px rgba(0, 0, 0, 0.2);
+      }
+      
+      .nav-links.active {
+        left: 0;
+      }
+      
+      nav a {
+        margin: 15px 0;
+        font-size: 1.1em;
+        padding: 12px 25px;
+      }
+      
+      .mobile-menu-btn {
+        display: block;
+      }
+      
+      h1 {
+        font-size: 2.5em;
+      }
+      
+      h2 {
+        font-size: 2em;
+      }
+      
+      section {
+        padding: 60px 0;
+        min-height: auto;
+      }
+      
+      .server-info, .rules-container {
+        padding: 30px;
+      }
+      
+      .button {
+        padding: 14px 30px;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .container {
+        padding: 0 20px;
+      }
+      
+      nav a {
+        margin: 12px 0;
+        font-size: 1em;
+        padding: 10px 20px;
+      }
+      
+      h1 {
+        font-size: 2em;
+      }
+      
+      h2 {
+        font-size: 1.6em;
+      }
+      
+      .button {
+        padding: 12px 25px;
+        font-size: 1em;
+        margin: 15px 5px;
+      }
+      
+      .card {
+        width: 100%;
+      }
+      
+      .features-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .footer-links {
+        flex-direction: column;
+        gap: 10px;
+      }
+      
+      .section-header .logo {
+        font-size: 4em;
+      }
+      
+      .rules-container {
+        padding: 25px 20px;
+      }
+      
+      .rules-list li {
+        font-size: 0.95em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Loading animation -->
+  <div class="loader-wrapper">
+    <div class="loader"></div>
+    <div class="loader-text">Nexus Klan</div>
+  </div>
+
+  <!-- Particles -->
+  <div class="particles" id="particles"></div>
+
+  <!-- Scroll to top button -->
+  <div class="scroll-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+    <i class="fas fa-arrow-up"></i>
+  </div>
+
+  <nav id="navbar">
+    <div class="nav-container">
+      <a href="#" class="nav-logo" onclick="showSection('bzk')">NEXUS<span>KLΛN</span></a>
+      <div class="nav-links" id="navLinks">
+        <a onclick="showSection('bzk')" class="active"><i class="fas fa-home"></i>Biz Kimiz</a>
+        <a onclick="showSection('ytk')"><i class="fas fa-users"></i>Yetkili Kadro</a>
+        <a onclick="showSection('sunucu')"><i class="fas fa-gamepad"></i>Sunucumuz</a>
+        <a onclick="showSection('kurallar')"><i class="fas fa-scroll"></i>Kurallar</a>
+        <a onclick="showSection('sikayet')"><i class="fas fa-exclamation-triangle"></i>Şikayet</a>
+        <a href="https://discord.gg/nexusclantr" target="_blank"><i class="fab fa-discord"></i>Discord</a>
+      </div>
+      <button class="mobile-menu-btn" id="mobileMenuBtn">
+        <i class="fas fa-bars"></i>
+      </button>
+    </div>
+  </nav>
+
+  <div class="container">
+    <!-- Biz Kimiz -->
+    <section id="bzk" class="active">
+      <div class="section-header">
+        <div class="logo">
+          <i class="fas fa-leaf"></i>
+        </div>
+        <h1>NEXUS <span>KLΛN</span></h1>
+        <h2>Biz Kimiz?</h2>
+        <p>CS2 Jailbreak'in en büyük ve en aktif Türk topluluğu olarak, kaliteli oyun deneyimini oyunculara sunmayı hedefliyoruz.</p>
+      </div>
+      
+      <div class="features-grid">
+        <div class="feature-item">
+          <h3><i class="fas fa-users"></i> Topluluk</h3>
+          <p>Nexus Klan, oyun dünyasında birlik, dayanışma ve dostluk temelleri üzerine kurulmuş güçlü bir topluluktur. Amacımız sadece oyunlarda başarı sağlamak değil; aynı zamanda üyelerimiz arasında güven, saygı ve samimi bir bağ kurmaktır.</p>
+        </div>
+        
+        <div class="feature-item">
+          <h3><i class="fas fa-shield-alt"></i> Felsefemiz</h3>
+          <p>Biz, oyun oynarken aynı zamanda gerçek bir aile gibi hareket ederiz. Zorluklarla birlikte mücadele eder, başarıları birlikte kutlarız. Klanımızda rekabetin yanında yardımlaşma, iletişim ve takım ruhu ön plandadır.</p>
+        </div>
+        
+        <div class="feature-item">
+          <h3><i class="fas fa-crown"></i> Tecrübe</h3>
+          <p>Yetkili kadromuz, CS 1.6 ve CS:GO gibi önceki Counter-Strike sürümlerinde uzun yıllara dayanan tecrübeye sahip oyunculardan oluşmaktadır. Bu tecrübeli ekip, şimdi CS2'de de bizimle birlikte yoluna devam ediyor.</p>
+        </div>
+        
+        <div class="feature-item">
+          <h3><i class="fas fa-rocket"></i> Gelişim</h3>
+          <p>Nexus Klan olarak, sürekli gelişen ve büyüyen bir yapıdayız. Oyun içi etkinlikler, turnuvalar ve sosyal buluşmalarla üyelerimizin bağlılığını ve motivasyonunu her zaman yüksek tutuyoruz.</p>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 60px;">
+        <p class="highlight-text">
+          Eğer sen de sadece bir oyuncu değil, aynı zamanda güçlü ve güvenilir bir topluluğun parçası olmak istiyorsan, Nexus Klan'a katılarak bu büyük ailenin bir parçası olabilirsin.
+        </p>
+        <p style="font-size: 1.5em; color: var(--primary); font-weight: 700; margin-top: 30px; text-shadow: 0 0 15px rgba(46, 204, 113, 0.5);">
+          Birlikte daha güçlüyüz, birlikte daha eğlenceliyiz.
+        </p>
+        <p style="font-size: 1.6em; margin-top: 30px; font-weight: 700; animation: pulse 2s infinite;">
+          Nexus Klan'a hoş geldin!
+        </p>
+        
+        <div style="margin-top: 50px;">
+          <a href="https://steamcommunity.com/groups/nexusjailbreakcs" target="_blank" class="button"><i class="fab fa-steam"></i>Steam Grubu</a>
+          <a href="https://discord.gg/nexusclantr" target="_blank" class="button secondary"><i class="fab fa-discord"></i>Discord'a Katıl</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Yetkili Kadro -->
+    <section id="ytk">
+      <div class="section-header">
+        <h2><i class="fas fa-crown"></i> Yetkili Kadromuz</h2>
+        <p>Sunucumuzun düzgün işleyişini sağlayan deneyimli ve adil yönetim ekibimiz:</p>
+      </div>
+      
+      <div class="card-container">
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-shield-alt"></i>
+          </div>
+          <h3>Saxey</h3>
+          <p>Sunucunun Kurucusu</p>
+          <p>Sunucunun genel işleyişinden sorumlu</p>
+          <div style="margin-top: 20px;">
+            <a href="#" class="button" style="padding: 8px 20px; font-size: 0.9em;"><i class="fas fa-envelope"></i> İletişim</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-users-cog"></i>
+          </div>
+          <h3>Muhsin</h3>
+          <p>Sunucu Yardımcısı</p>
+          <p>Topluluk yönetimi ve etkinlikler</p>
+          <div style="margin-top: 20px;">
+            <a href="#" class="button" style="padding: 8px 20px; font-size: 0.9em;"><i class="fas fa-envelope"></i> İletişim</a>
+          </div>
+        </div>
+        
+        <div class="card">
+          <div class="card-icon">
+            <i class="fas fa-code"></i>
+          </div>
+          <h3>Armadon</h3>
+          <p>Yazılım & Geliştirme</p>
+          <p>Sunucu altyapısı ve özel eklentiler</p>
+          <div style="margin-top: 20px;">
+            <a href="#" class="button" style="padding: 8px 20px; font-size: 0.9em;"><i class="fas fa-envelope"></i> İletişim</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sunucumuz -->
+    <section id="sunucu">
+      <div class="section-header">
+        <div class="logo">
+          <i class="fas fa-server"></i>
+        </div>
+        <h1>NEXUS <span>JAILBREAK</span></h1>
+        <h2>Sunucumuza Hoş Geldiniz</h2>
+        <p>Türkiye'nin en iyi CS2 Jailbreak sunucusunda eğlencenin tadını çıkarın!</p>
+      </div>
+      
+      <div class="server-info">
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-circle"></i>
+          </div>
+          <div class="info-content">
+            <p><strong>Çevrimiçi:</strong> 24/7 Aktif Sunucu | <strong>Gecikme:</strong> < 30ms</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-bolt"></i>
+          </div>
+          <div class="info-content">
+            <p><strong>Performans:</strong> Yüksek FPS, Düşük Ping | <strong>Slot:</strong> 30 Oyuncu</p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-user-shield"></i>
+          </div>
+          <div class="info-content">
+            <p><strong>Güvenlik:</strong> Gelişmiş Anti-Cheat Sistemi | <strong>Aktif Yetkili Kontrolü</strong></p>
+          </div>
+        </div>
+        
+        <div class="info-item">
+          <div class="info-icon">
+            <i class="fas fa-robot"></i>
+          </div>
+          <div class="info-content">
+            <p><strong>Özellikler:</strong> Özel Eklentiler, Komut Sistemleri, Günlük Etkinlikler</p>
+          </div>
+        </div>
+      </div>
+      
+      <div style="text-align: center; margin-top: 30px;">
+        <a href="steam://connect/185.193.165.39" class="button"><i class="fas fa-plug"></i>Sunucuya Bağlan</a>
+        <a href="https://discord.gg/nexusclantr" target="_blank" class="button secondary"><i class="fab fa-discord"></i>Discord Sunucusu</a>
+        
+        <div style="margin-top: 30px;">
+          <div class="ip-address">
+            <i class="fas fa-network-wired"></i> 185.193.165.39
+          </div>
+          <p style="font-size: 0.9em; color: var(--gray);">
+            Yukarıdaki IP adresini kullanarak sunucumuza doğrudan bağlanabilirsiniz
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Kurallar -->
+    <section id="kurallar">
+      <div class="section-header">
+        <h2><i class="fas fa-scroll"></i> Kurallar</h2>
+        <p>Sunucumuzda uyulması gereken tüm kurallar aşağıda listelenmiştir. Lütfen oyun keyfiniz ve diğer oyuncuların keyfi için kurallara uyunuz.</p>
+      </div>
+      
+      <div class="rules-container">
+        <div class="rules-category">
+          <h3>Nexus Discord Kuralları</h3>
+          <ul class="rules-list">
+            <li>Rahatsızlık vermek, zorbalamak yasaktır</li>
+            <li>Kanalları amacı dışında kullanmak yani sunucuyu herhangi bir açıdan trollemek yasaktır.</li>
+            <li>Spam ve flood atarak mesaj yazmak yasaktır.</li>
+            <li>Özelden, sunucudan, isimden vb. yollardan reklam yapmak yasaktır.</li>
+            <li>Sahte nick, isim, yaş yazdırmak yasaktır.</li>
+            <li>Etiket yoluyla kullanıcıları veya yetkilileri rahatsız etmek yasaktır.</li>
+            <li>Siyaset, din, dil, ırk vb. konuları açıp konuşmak yasaktır</li>
+            <li>Küfür, argo, ağır hakaret söylemleri yasaktır.</li>
+            <li>Kanallarda trollemek yasaktır.</li>
+            <li>Yaş veya cinsiyet ile dalga geçmek yasaktır.</li>
+            <li>Sunucuda saygısızlık yapmak yasaktır.</li>
+            <li>Gereksiz spoiler kullanımı yasaktır.</li>
+            <li>Etiketlenemeyen, boş nicklerin kullanımı yasaktır.</li>
+            <li>İnsanların değer saydığı değerlere saygısızlık göstermek yasaktır.</li>
+            <li>Discord Linki, Satış Linki, Çekiliş Linki vb. linkler paylaşmak yasaktır.</li>
+            <li>Pornografik, Cinsel İçerikli, +18 vb. şeyler paylaşmak yasaktır.</li>
+            <li>Sunucu sohbetlerinin bütün hepsinde "Caps-Lock" açık yazmak yasaktır.</li>
+            <li>Belirli bir kişinin şahsına karşı istemediği davranışlarda bulunmak yasaktır.</li>
+            <li>Dolandırıcılık yapmak yasaktır.</li>
+            <li>Sunucu içerisinde sesli veya yazılı şekilde tartışmak, kavga yasaktır.</li>
+            <li>Kan, Vahşet vb. içerikli fotoğraf, video, metin paylaşımı yasaktır.</li>
+            <li>Rol almak için ısrar etmek yasaktır.</li>
+            <li>Kurucuları ve Yönetim ekibini gereksiz yere etiketlemek rahatsız etmek yasaktır.</li>
+          </ul>
+          <div class="rules-note">
+            Sunucuya Giren Herkes Kuralları Okumuş ve Anlamış Olarak Kabul Edilmektedir.
+          </div>
+        </div>
+        
+        <div class="rules-category">
+          <h3>Genel Kurallar</h3>
+          <ul class="rules-list">
+            <li>57:00 Hücre kapısı açılmaz ise CT takımı ölür eğer hücre kapısını T takımı bugda bırakırsa herhangi bişey yapılmaz.</li>
+            <li>57:00 Kadar ilk af verilmez ise CT takımı ölür.</li>
+            <li>54:00 Kadar CT takımı T takımını oyuna sokamazsa CT takımı ölür.</li>
+            <li>T takımı oyundan çıktıktan sonra kaçak yaptığında 50:00 kadar CT takımı kaçağı durduramazsa CT takımı ölür.</li>
+            <li>İlk af sonrası 56:00 portala girenler ölür.</li>
+            <li>İlk af öncesi 58:00 portala girenler ölür.</li>
+            <li>İsyan varken AF verilemez.</li>
+            <li>İsyan varken FK verilemez.</li>
+            <li>İsyan eli godlu elden üstündür.</li>
+            <li>Korumalar 7 kişide bir alınmaktadır.</li>
+            <li>Sunucu içerisinde REKLAM YAPMAK yasaktır.</li>
+            <li>Süt alınan oyuncuların isyan hakları yoktur sona kaldıklarında lr veya isyan seçemezler.</li>
+            <li>Komutçu harici mikrofon basmak yasaktır komutçu admin ve korumalarda dahil.</li>
+            <li>Küfür eden birisine kafadan sallama gag veya ban atmak yasaktır.</li>
+            <li>Hertürlü sunucu açığından yararlanmak yasaktır.</li>
+            <li>Sonakalan kişi lr seçip isyan atması yasaktır aynı şekilde isyan seçip lr atması yasaktır.</li>
+            <li>Komutçuyu ve Sunucuyu trollemek yasaktır.</li>
+            <li>CT takımının kaçak veya silah odası camlarından hücreye doğru ateş etmesi yasaktır</li>
+            <li>3. parti yazılımları kullanmak yasaktır</li>
+            <li>Godlu el dışı ve deve cüce harici skin takibi yasaktır</li>
+            <li>Sunucu içi hertürlü toxiclik yasaktır</li>
+            <li>Kredi dilenmek veya istemek yasaktır</li>
+            <li>Tüm oyunlarda kısayol infaz sebepidir</li>
+            <li>Komutçu adminleri rahatsız etmek lafa tutmak ve benzeri şeyler yasaktır.</li>
+            <li>Ölü info yasaktır.</li>
+            <li>Oylamalara karışmak yasaktır.</li>
+          </ul>
+        </div>
+        
+        <div class="rules-category">
+          <h3>Oyun İçi Kurallar - İsyan Eli</h3>
+          <ul class="rules-list">
+            <li>İsyan elinde 58:00 Komutçu olduğu yerin info vermek zorunludur.</li>
+            <li>İsyan elinde 57:00 Portalda olanlar slaylenir çıkmak zorunludur.</li>
+            <li>İsyan elinde 56:00 Kadar CT Takımı yaşarsa tüm T takımı ölür.</li>
+            <li>İsyan elinde AF verilmez.</li>
+            <li>İsyan elinde CT takımı kendini oyuna sokamaz bug yapamaz.</li>
+            <li>İsyan elinde Silah,Bomba vs. spamlamak yasaktır.</li>
+            <li>Otorespawn plugini eğer aktif değilken CT takımı ölürse o raunt sayılmamaktadır.</li>
+            <li>İsyanelinde EXKZ köprü sonrası yasaktır.</li>
+            <li>İsyanelinde KİLL çekmek yasaktır.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Şikayet -->
+    
+<section id="sikayet">
+  <div class="section-header">
+    <h2><i class="fas fa-exclamation-circle"></i> Şikayet Formu</h2>
+    <p>Aşağıdaki formu doldurarak şikayetinizi bize iletebilirsiniz. Tüm şikayetler titizlikle incelenir.</p>
+  </div>
+  <form id="sikayetForm" style="max-width: 700px; margin: auto; display: flex; flex-direction: column; gap: 15px;">
+    <input type="text" id="nick" placeholder="Oyun Nickiniz" required>
+    <input type="text" id="discord" placeholder="Discord Adınız" required>
+    <input type="text" id="gercekAd" placeholder="Gerçek Adınız" required>
+    <input type="number" id="yas" placeholder="Yaşınız" required>
+    <input type="text" id="sikayetEdilen" placeholder="Şikayet Edilen Oyuncu" required>
+    <input type="text" id="ihlali" placeholder="Yaptığı İhlal" required>
+    <textarea id="mesaj" placeholder="Şikayet Metni" rows="6" required></textarea>
+    <button type="submit" class="button">Şikayeti Gönder</button>
+  </form>
+  <script>
+    document.getElementById('sikayetForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const nick = document.getElementById('nick').value;
+      const discord = document.getElementById('discord').value;
+      const gercekAd = document.getElementById('gercekAd').value;
+      const yas = document.getElementById('yas').value;
+      const sikayetEdilen = document.getElementById('sikayetEdilen').value;
+      const ihlali = document.getElementById('ihlali').value;
+      const mesaj = document.getElementById('mesaj').value;
+      const webhookURL = "https://discord.com/api/webhooks/1385732572658794537/kwb1FXAg-SbgatJuiuF0U4El7LYXHEP8d7Ytw1R4W1mD3qih9Tt4BFK7TafWT1eelnvt";
+      const payload = {
+        content: `📢 **Yeni Şikayet Alındı!**
+
+👤 **Oyun Nicki:** ${nick}
+💬 **Discord Adı:** ${discord}
+🪪 **Gerçek Adı:** ${gercekAd}
+🎂 **Yaşı:** ${yas}
+
+🎯 **Şikayet Edilen Oyuncu:** ${sikayetEdilen}
+🚨 **Yaptığı İhlal:** ${ihlali}
+
+📝 **Şikayet Metni:**
+${mesaj}`
+      };
+      await fetch(webhookURL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      alert("Şikayet başarıyla gönderildi.");
+      this.reset();
+    });
+  </script>  
+</section>  
+
+  </div>  
+
+  <div class="footer">
+    <div class="footer-links">
+      <a onclick="showSection('bzk')">Biz Kimiz</a>
+      <a onclick="showSection('ytk')">Yetkili Kadro</a>
+      <a onclick="showSection('sunucu')">Sunucumuz</a>
+      <a onclick="showSection('kurallar')">Kurallar</a>
+      <a onclick="showSection('sikayet')">Şikayet</a>
+    </div>  
+    
+    <div style="margin-bottom: 20px;">
+      <a href="steam://connect/185.193.165.39" style="color: var(--light); text-decoration: none; font-family: monospace; font-size: 1.1em;">
+        <i class="fas fa-server"></i> steam://connect/185.193.165.39
+      </a>
+    </div>
+    
+    <div class="social-links">
+      <a href="https://discord.gg/nexusclantr" target="_blank"><i class="fab fa-discord"></i></a>
+      <a href="https://steamcommunity.com/groups/nexusjailbreakcs" target="_blank"><i class="fab fa-steam"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="#" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    
+    <p style="margin-top: 30px;">
+      © 2025 <strong style="color: var(--primary);">Nexus Klan</strong> - Tüm Hakları Saklıdır.<br>
+      <small>CS2 Jailbreak sunucusu | Tasarım ve Geliştirme: Nexus Klan</small>
+    </p>
+  </div>  
+
+  <script>
+    // Sayfa yükleme animasyonu
+    window.addEventListener('load', function() {
+      const loader = document.querySelector('.loader-wrapper');
+      setTimeout(() => {
+        loader.style.opacity = '0';
+        setTimeout(() => {
+          loader.style.display = 'none';
+        }, 500);
+      }, 1200);
+    });  
+
+    // Section geçiş fonksiyonu
+    function showSection(id) {
+      // Tüm section'ları ve nav linklerini kapat
+      document.querySelectorAll('section').forEach(sec => {
+        sec.classList.remove('active');
+      });  
+      
+      document.querySelectorAll('nav a').forEach(link => {
+        link.classList.remove('active');
+      });  
+      
+      // Mobile menüyü kapat
+      document.getElementById('navLinks').classList.remove('active');
+      document.getElementById('mobileMenuBtn').innerHTML = '<i class="fas fa-bars"></i>';
+      
+      // Seçilen section'ı aç
+      const section = document.getElementById(id);
+      section.classList.add('active');
+      
+      // Seçilen nav linkini aktif yap
+      document.querySelectorAll('nav a').forEach(link => {
+        if (link.getAttribute('onclick') && link.getAttribute('onclick').includes(id)) {
+          link.classList.add('active');
+        }
+      });  
+      
+      // Sayfa başlığını güncelle
+      const titles = {
+        'bzk': 'Biz Kimiz - Nexus Klan',
+        'ytk': 'Yetkili Kadro - Nexus Klan',
+        'sunucu': 'Sunucumuz - Nexus Klan',
+        'kurallar': 'Kurallar - Nexus Klan',
+        'sikayet': 'Şikayet - Nexus Klan'
+      };
+      document.title = titles[id] || 'Nexus Klan Jailbreak';
+      
+      // Sayfanın başına yumuşak kaydırma
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      
+      // URL'de hash güncelleme
+      history.pushState(null, null, '#' + id);
+    }
+
+    // Mobile menü toggle
+    document.getElementById('mobileMenuBtn').addEventListener('click', function() {
+      const navLinks = document.getElementById('navLinks');
+      navLinks.classList.toggle('active');
+      
+      if (navLinks.classList.contains('active')) {
+        this.innerHTML = '<i class="fas fa-times"></i>';
+      } else {
+        this.innerHTML = '<i class="fas fa-bars"></i>';
+      }
+    });  
+
+    // Navbar scroll efekti
+    window.addEventListener('scroll', function() {
+      const nav = document.getElementById('navbar');
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
+      
+      // Scroll to top butonunu göster/gizle
+      const scrollTopBtn = document.querySelector('.scroll-top');
+      if (window.scrollY > 300) {
+        scrollTopBtn.classList.add('active');
+      } else {
+        scrollTopBtn.classList.remove('active');
+      }
+    });
+
+    // Sayfa yüklendiğinde aktif section'ı kontrol et
+    document.addEventListener('DOMContentLoaded', function() {
+      // URL'de hash varsa o section'ı aç
+      if (window.location.hash) {
+        const sectionId = window.location.hash.substring(1);
+        showSection(sectionId);
+      }
+    });                          
+
+    // Particles effect
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');  
+      const particleCount = 30;
+      
+      for (let i = 0; i < particleCount; i++) {      
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        
+        // Random properties
+        const size = Math.random() * 5 + 1;
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;  
+        const delay = Math.random() * 10;
+        const duration = Math.random() * 20 + 10;
+        
+        particle.style.width = `${size}px`;
+        particle.style.height = `${size}px`;
+        particle.style.left = `${posX}%`;
+        particle.style.top = `${posY}%`;
+        particle.style.opacity = Math.random() * 0.5 + 0.1;  
+        particle.style.animation = `float ${duration}s ease-in-out ${delay}s infinite`;
+        
+        particlesContainer.appendChild(particle);  
+      }
+    }
+
+    // Initialize particles
+    createParticles();                          
+  </script>                            
+</body>                          
+</html>                                
